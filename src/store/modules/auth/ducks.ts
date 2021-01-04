@@ -29,7 +29,7 @@ const savingToken = (
   action: updateToken
 ): INITIAL_STATE_TYPE => {
   const { token } = action;
-  return { ...state, token };
+  return { ...state, token, isLogged: true };
 };
 
 const setIsLogged = (

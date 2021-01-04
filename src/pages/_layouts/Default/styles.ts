@@ -8,10 +8,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  min-width: 312px;
-  max-width: 768px;
-  max-height: 1024px;
-  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;

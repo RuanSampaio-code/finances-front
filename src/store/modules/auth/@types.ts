@@ -8,7 +8,7 @@ export type DucksType = {
 
 export interface singIN extends reducer {
   email: string;
-  senha: string;
+  password: string;
 }
 
 export interface signUP extends reducer {

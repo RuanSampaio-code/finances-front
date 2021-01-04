@@ -8,9 +8,10 @@ const Home: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const dispatch = useDispatch();
-  const handleSubmit = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     dispatch({
-      type: "SING_UP",
+      type: "SIGN_IN_REQUEST",
       password,
       email,
     });
@@ -19,7 +20,6 @@ const Home: React.FC = () => {
     <Container>
       <Card onSubmit={handleSubmit}>
         <Image src={image} />
-
         <Input setValue={setEmail} name="email" type="email" />
         <Input setValue={setPassword} name="password" type="password" />
         <Button type="submit">Login</Button>
