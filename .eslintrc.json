@@ -24,6 +24,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-use-before-define": "off",

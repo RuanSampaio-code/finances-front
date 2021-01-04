@@ -17,33 +17,31 @@ export default createGlobalStyle`
     height: 100%;
   }
   body {
-    font: 400 Inter, sans-serif;
+    font: 400 ${({ theme }) => theme.fonts.regular}, sans-serif;
     -webkit-font-smoothing: antialiased;
-    background: #F3F3F3;
-    font-family: 'Inter', sans-serif;
+    background: ${({ theme }) => theme.color.background};
+    font-family: ${({ theme }) => theme.fonts.regular}, sans-serif;
   }
 input {
     width: 100%;
-    height: 60px;
-    border: 1px solid #547B98;
-    background: #F3F3F3;
+    border: 1px solid ${({ theme }) => theme.color.xiketic};
+    background: ${({ theme }) => theme.color.background};
     border-radius: 4px;
     padding: 0 24px;
     color: #737373;
     text-align: center;
-    font: 300 18px Inter, sans-serif;
 }
-.button {
+
+button {
     width: 100%;
-    height: 60px;
     background: #202B3F ;
     border: 0;
     border-radius: 4px;
-    color: #F3F3F3;
+    color: ${({ theme }) => theme.color.background};
     text-align: center;
     text-decoration: none;
-    font-size: 18px;
 }
+
 a{
   text-decoration: none;
   color: #737373;
