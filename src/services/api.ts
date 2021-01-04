@@ -14,3 +14,15 @@ export async function Post(
   });
   return response;
 }
+
+export async function Get(
+  endPoint: string,
+  token?: string,
+  data?: unknown
+): Promise<AxiosResponse<any>> {
+  const response = await api.get(endPoint, {
+    params: data,
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return response;
+}

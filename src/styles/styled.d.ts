@@ -9,7 +9,13 @@ declare module "styled-components" {
       sandyBrown: string;
       redOrangeColorWheel: string;
       xiketic: string;
+      queenBlue: string;
+      carolineBlue: string;
+
       background: string;
+      colorPalette: {
+        primary: string;
+      };
     };
     fonts: {
       regular: string;
