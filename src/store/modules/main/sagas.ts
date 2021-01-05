@@ -1,7 +1,8 @@
 import { all, takeLatest, call, put, select } from "redux-saga/effects";
 import { AuthTypes } from "./ducks";
-import { Get } from "~/services/api";
+import { Get, Post } from "~/services/api";
 import DefaultRootState from "~/store/@types";
+import { spedingReducer } from "./@types";
 // import history from "~/services/history";
 
 function* navigation() {
@@ -24,4 +25,25 @@ function* navigation() {
   } catch (error) {}
 }
 
-export default all([takeLatest(AuthTypes.BALANCE_NAVIGATION, navigation)]);
+function* speding({ name, amount, installment, date }: spedingReducer) {
+  const { token } = yield select((state: DefaultRootState) => state.auth);
+  yield put({ type: "CHANGING_LOADING", loading: true });
+  try {
+    const { status } = yield call(
+      Post,
+      "speding",
+      { name, amount, installment, date },
+      token
+    );
+    if (status === 200) {
+      yield put({ type: "BALANCE_NAVIGATION" });
+    }
+    // eslint-disable-next-line no-empty
+  } catch (error) {}
+  yield put({ type: "CHANGING_LOADING", loading: false });
+}
+
+export default all([
+  takeLatest(AuthTypes.BALANCE_NAVIGATION, navigation),
+  takeLatest(AuthTypes.SPEDING_REQUEST, speding),
+]);

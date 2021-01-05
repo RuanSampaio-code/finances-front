@@ -1,11 +1,13 @@
 import { createReducer, createActions } from "reduxsauce";
 import Immutable from "seamless-immutable";
 
-import { DucksType, updateMonthsAction } from "./@types";
+import { DucksType, updateMonthsAction, updateLoadingAction } from "./@types";
 
 const { Types, Creators } = createActions({
   updateMonths: ["months"],
   balanceNavigation: null,
+  changingLoading: ["value"],
+  spedingRequest: ["name", "amount", "date", "installment"],
 });
 
 export const AuthTypes = Types;
@@ -26,6 +28,7 @@ export const INITIAL_STATE = Immutable<DucksType>({
     { name: "Novembro", amount: 0 },
     { name: "Dezembro", amount: 0 },
   ],
+  loading: false,
 });
 
 type INITIAL_STATE_TYPE = typeof INITIAL_STATE;
@@ -41,6 +44,18 @@ const updateMonths = (
   };
 };
 
+const updateLoading = (
+  state: INITIAL_STATE_TYPE,
+  action: updateLoadingAction
+): INITIAL_STATE_TYPE => {
+  const { loading } = action;
+  return {
+    ...state,
+    loading,
+  };
+};
+
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.UPDATE_MONTHS]: updateMonths,
+  [Types.CHANGING_LOADING]: updateLoading,
 });
