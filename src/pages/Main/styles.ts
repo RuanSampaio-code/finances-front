@@ -14,14 +14,14 @@ export const Container = styled.div`
 export const BalancoTotal = styled.div``;
 
 export const PlusButton = styled.button`
-  height: 80%;
+  height: 43px;
   width: 120px;
   font-size: 15px;
   font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
 export const InputValor = styled(Input)`
-  height: 80%;
+  height: 43px;
   width: 200px;
   border: 1px solid #a2a2a2;
   background: none;
@@ -30,7 +30,7 @@ export const InputValor = styled(Input)`
 `;
 
 export const InputInstallment = styled(Input)`
-  height: 80%;
+  height: 43px;
   width: 150px;
   border: 1px solid #a2a2a2;
   background: none;
@@ -39,7 +39,7 @@ export const InputInstallment = styled(Input)`
 `;
 
 export const InputName = styled(Input)`
-  height: 80%;
+  height: 43px;
   width: 200px;
   border: 1px solid #a2a2a2;
   background: none;
@@ -68,13 +68,25 @@ export const ActionContainer = styled.div`
   margin: 60px 0 auto 0;
   border-radius: 4px;
   padding: 0 20px;
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+    height: 120px;
+  }
+  @media (max-width: 730px) {
+    height: 170px;
+  }
+  @media (max-width: 564px) {
+    height: 400px;
+  }
 `;
 
 export const MonthContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   margin: 0 0 auto 0;
 `;
 
@@ -83,7 +95,7 @@ export const Calender = styled.input`
   width: 200px;
   border: 1px solid #a2a2a2;
   padding: 12px 20px;
-  height: 80%;
+  height: 43px;
   text-align: justify;
   font-size: 18px;
   font-family: ${({ theme }) => theme.fonts.regular};

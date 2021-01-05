@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   background: ${({ theme }) => theme.color.vegasGold};
   border-radius: 4px;
+  margin: 5px;
 `;
 
 export const TopContainer = styled.div`

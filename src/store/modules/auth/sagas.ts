@@ -10,6 +10,7 @@ function* signIn({ email, password }: singIN) {
     const { token } = data;
     yield put({ type: "SAVE_TOKEN", token });
     yield history.push("/");
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }

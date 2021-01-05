@@ -8,8 +8,6 @@ import {
   Container,
   MonthContainer,
   ActionContainer,
-  Plus,
-  BalancoTotal,
   PlusButton,
   Calender,
   InputValor,
