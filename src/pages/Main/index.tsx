@@ -13,12 +13,14 @@ import {
   InputValor,
   InputInstallment,
   InputName,
+  FooterContainer,
 } from "./styles";
 
 const Main: React.FC = () => {
   const dispatch = useDispatch();
 
   const [date, setDate] = useState<string>("");
+  const [changeColor, setChangeColor] = useState<boolean>(false);
   const [valor, setValor] = useState<number>(0);
   const [installment, setInstallment] = useState<number>(0);
   const [name, setName] = useState<string>("");
@@ -74,6 +76,7 @@ const Main: React.FC = () => {
           {loading ? "Carregando..." : "Adicionar"}
         </PlusButton>
       </ActionContainer>
+
       <MonthContainer>
         {months.map((item, index) => (
           <MonthCard

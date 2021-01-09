@@ -6,13 +6,13 @@ import { Post } from "~/services/api";
 
 function* signIn({ email, password }: singIN) {
   try {
-    const { data } = yield call(Post, "auth", { email, password });
-    const { token } = data;
-    yield put({ type: "SAVE_TOKEN", token });
+    // const { data } = yield call(Post, "auth", { email, password });
+    // const { token } = data;
+    // yield put({ type: "SAVE_TOKEN", token });
     yield history.push("/");
-    window.location.reload();
+    // window.location.reload();
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 

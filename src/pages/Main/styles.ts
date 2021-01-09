@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FaPlus } from "react-icons/fa";
 import Input from "~/components/Input";
+
+type PropsFooter = {
+  changeColor: boolean;
+};
 
 export const Container = styled.div`
   height: 100%;
@@ -99,4 +103,18 @@ export const Calender = styled.input`
   text-align: justify;
   font-size: 18px;
   font-family: ${({ theme }) => theme.fonts.regular};
+`;
+
+export const FooterContainer = styled.footer<PropsFooter>`
+  ${({ changeColor }) =>
+    changeColor
+      ? css`
+          background: turquoise;
+        `
+      : css`
+          background: red;
+        `}
+  height: 20px;
+  width: 100%;
+  margin: 20px 12px;
 `;

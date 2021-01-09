@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
-import { Route, Redirect, RouteProps } from "react-router-dom";
+import { Route, RouteProps } from "react-router-dom";
 
 import AuthLayout from "~/pages/_layouts/Auth";
 import DefaultLayout from "~/pages/_layouts/Default";
 
-import { store } from "~/store";
+// import { store } from "~/store";
 
 interface Props extends RouteProps {
   isPrivate?: boolean;
@@ -14,19 +14,20 @@ interface Props extends RouteProps {
 
 const RouteWrapper: React.FC<Props> = ({
   component: Component,
-  isPrivate = false,
+  // isPrivate = false,
   ...rest
 }) => {
-  const { isLogged: signed } = store.getState().auth;
-  if (!signed && isPrivate) {
-    return <Redirect to="/login" />;
-  }
+  // const { isLogged: signed } = store.getState().auth;
+  // if (!signed && isPrivate) {
+  //   return <Redirect to="/login" />;
+  // }
 
-  if (signed && !isPrivate) {
-    return <Redirect to="/" />;
-  }
+  // if (signed && !isPrivate) {
+  //   return <Redirect to="/" />;
+  // }
 
-  const Layout = signed ? DefaultLayout : AuthLayout;
+  // const Layout = signed ? DefaultLayout : AuthLayout;
+  const Layout = AuthLayout;
 
   return (
     <Route
