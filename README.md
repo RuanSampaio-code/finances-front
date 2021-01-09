@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Clonando o repositório 
+  Primeiramente instalem o Git. Após a intalação vocês precisarão clonar o repositório.
+  
+  `$ git clone  https://github.com/GuilhermeLis/finances-front.git`
+  
+  Agora entrem dentro da pasta e usem o comando 
+  
+  `$ git checkout develop`
+  
+  Agora estamos na branch que podemos fazer alterações uma vez aqui sintam-se livres para alterar o código do jeito que preferirem o último comando da lista é para instalar as dependências.
+  
+  `$ yarn`
+
 ## Available Scripts
 
 In the project directory, you can run:
